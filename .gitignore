@@ -1,0 +1,64 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.pytensor/
+.cache/
+.config/
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+*.credentials
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Jupyter
+*.ipynb_checkpoints
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# ---------------------------------------------------------------------------
+# Generated artifacts are intentionally NOT ignored by default: the trained
+# models, HTML reports and prediction CSVs are project deliverables.
+# Uncomment the lines below if you prefer to track only source code and
+# regenerate artifacts with the pipeline in README.md.
+# ---------------------------------------------------------------------------
+# *.pkl
+# purchase_predictions.csv
+# monetary_predictions.csv
+# predicted_clv.csv
+# Discount_offered_Custmor.csv
+# clean_transactions.csv
+# Augmented_model_input.csv
+# rfm_features.csv
+# model_input.csv
+# pnbd_input.csv
+# gamma_gamma_input.csv
+# validation_report.csv
+# *.html

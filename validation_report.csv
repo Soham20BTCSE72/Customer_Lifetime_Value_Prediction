@@ -1,0 +1,18 @@
+check,scope,status,detail,action
+exact_columns_and_order,schema,PASS,"expected ['customer_id', 'frequency', 'recency', 'T', 'monetary_value'], got ['customer_id', 'frequency', 'recency', 'T', 'monetary_value']",None
+minimum_row_count,schema,PASS,"23,502 customer rows",None
+dtype:customer_id,dtype,PASS,"expected int64, got int64",None
+dtype:frequency,dtype,PASS,"expected float64, got float64",None
+dtype:recency,dtype,PASS,"expected float64, got float64",None
+dtype:T,dtype,PASS,"expected float64, got float64",None
+dtype:monetary_value,dtype,PASS,"expected float64, got float64",None
+no_nulls,values,PASS,null cells: 0,None
+all_finite,values,PASS,"no NaN, +inf or -inf in numeric columns",None
+customer_id_unique,identity,PASS,duplicates: 0,None
+frequency_non_negative,Pareto/NBD,PASS,min=0.00,None
+frequency_integer_valued,Pareto/NBD,PASS,repeat counts must be whole numbers stored as float64,None
+recency_non_negative,Pareto/NBD,PASS,min=0.00,None
+T_positive_and_ge_recency,Pareto/NBD,PASS,"min T=31.29, max recency=77.71",None
+monetary_value_non_negative,Gamma-Gamma,PASS,"min=0.00, max=756.47",None
+gamma_gamma_eligible_rows,Gamma-Gamma,PASS,"11,639 customers with repeat purchases and spend > 0",None
+gamma_gamma_uncorrelated_assumption,Gamma-Gamma,PASS,Pearson r=0.0514 between frequency and monetary_value (model assumes |r| < 0.3),None
